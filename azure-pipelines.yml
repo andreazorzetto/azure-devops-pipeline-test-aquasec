@@ -21,3 +21,4 @@ steps:
       scanner: 'registry.aquasec.com/scanner:6.5'
       connection: 'Aqua-MDG'
       registerCompliant: true
+      registry: 'dockerhub-andreazorzetto'

@@ -14,3 +14,9 @@ steps:
       repository: $(imageName)
       command: build
       Dockerfile: app/Dockerfile
+  - task: aquasec.aquasec.showCommits.aquasecScanner@4
+    displayName: 'Image Scanning'
+    inputs:
+      image: 'pipelines-javascript-docker'
+      scanner: 'registry.aquasec.com/scanner:6.5'
+      connection: 'Aqua-MDG'

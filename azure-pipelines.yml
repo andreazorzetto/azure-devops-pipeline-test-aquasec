@@ -17,6 +17,6 @@ steps:
   - task: aquasec.aquasec.showCommits.aquasecScanner@4
     displayName: 'Image Scanning'
     inputs:
-      image: pipelines-javascript-docker:$(Build.BuildNumber)
+      image: pipelines-javascript-docker:$(BuildNumber)
       scanner: 'registry.aquasec.com/scanner:6.5'
       connection: 'Aqua-MDG'

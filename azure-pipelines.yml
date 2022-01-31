@@ -20,3 +20,5 @@ steps:
       image: $(imageName):$(Build.BuildId)
       scanner: 'registry.aquasec.com/scanner:6.5'
       connection: 'Aqua-MDG'
+      registerCompliant: true
+      registry: 'dockerhub-andreazorzetto'

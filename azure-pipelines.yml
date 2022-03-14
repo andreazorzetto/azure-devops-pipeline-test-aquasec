@@ -22,3 +22,4 @@ steps:
       connection: 'Aqua-MDG'
       registerCompliant: true
       registry: 'dockerhub-andreazorzetto'
+      caCertificates: true

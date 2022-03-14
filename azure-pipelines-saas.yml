@@ -19,7 +19,8 @@ steps:
     inputs:
       image: $(imageName):$(Build.BuildId)
       scanner: 'registry.aquasec.com/scanner:6.5'
+      connection: 'Cloud test123'
       registerCompliant: true
       registry: 'dockerhub-andreazorzetto'
-      customFlags: '-H https://3ab8cc4279.cloud.aquasec.com --token e4c8e1721468003490ea0d8e86ccf1ec3335ffbf'
+      customFlags: '---token e4c8e1721468003490ea0d8e86ccf1ec3335ffbf'
       caCertificates: true

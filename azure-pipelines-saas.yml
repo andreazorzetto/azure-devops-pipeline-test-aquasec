@@ -5,18 +5,22 @@ pool: "vagrant"
 #  vmImage: 'self hosted' # set to windows-latest or another Windows vmImage for Windows builds
 
 variables:
-  imageName: 'ubuntu/squid'
-  tag: 'latest'
-
+  imageName: 'dockerhub-andreazorzetto/alpine-image'
 
 steps:
+  - task: Docker@2
+    displayName: Build an image
+    inputs:
+      repository: $(imageName)
+      command: build
+      Dockerfile: app/Dockerfile
   - task: aquasec.aquasec.showCommits.aquasecScanner@4
     displayName: 'Image Scanning'
     inputs:
-      image: $(imageName):$(tag)
+      image: $(imageName):$(Build.BuildId)
       scanner: 'registry.aquasec.com/scanner:6.5'
       connection: 'Cloud test123'
       registerCompliant: true
-      registry: 'Docker Hub'
+      registry: 'dockerhub-andreazorzetto'
       customFlags: '--token e4c8e1721468003490ea0d8e86ccf1ec3335ffbf'
-      scanType: hosted
+      caCertificates: true

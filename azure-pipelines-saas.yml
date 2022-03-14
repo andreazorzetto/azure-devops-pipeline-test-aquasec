@@ -22,4 +22,5 @@ steps:
       connection: 'Cloud test123'
       registerCompliant: true
       registry: 'dockerhub-andreazorzetto'
+      customFlags: '--token e4c8e1721468003490ea0d8e86ccf1ec3335ffbf'
       caCertificates: true

@@ -7,6 +7,7 @@ pool: "vagrant"
 variables:
   imageName: 'dockerhub-andreazorzetto/alpine-image'
 
+
 steps:
   - task: Docker@2
     displayName: Build an image
@@ -22,3 +23,4 @@ steps:
       connection: 'Cloud test123'
       registerCompliant: true
       registry: 'Docker Hub'
+      customFlags: '--token e4c8e1721468003490ea0d8e86ccf1ec3335ffbf'

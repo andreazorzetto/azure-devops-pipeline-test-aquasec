@@ -6,13 +6,14 @@ pool: "vagrant"
 
 variables:
   imageName: 'ubuntu/squid'
+  tag: 'latest'
 
 
 steps:
   - task: aquasec.aquasec.showCommits.aquasecScanner@4
     displayName: 'Image Scanning'
     inputs:
-      image: $(imageName):$(Build.BuildId)
+      image: $(imageName):$(tag)
       scanner: 'registry.aquasec.com/scanner:6.5'
       connection: 'Cloud test123'
       registerCompliant: true
